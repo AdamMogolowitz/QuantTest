@@ -1,0 +1,134 @@
+{
+  "audit_survival_counts": {
+    "DISAPPEARED": 2202,
+    "SURVIVOR": 2519
+  },
+  "builder_version": "h01-quantconnect-export-v1",
+  "columns": [
+    "signal_id",
+    "issuer_cik",
+    "issuer_name",
+    "historical_ticker",
+    "historical_ticker_candidates",
+    "historical_share_class",
+    "identity_status",
+    "audit_survival_classification",
+    "signal_date",
+    "signal_timestamp",
+    "distinct_insider_count",
+    "cluster_window_calendar_days",
+    "minimum_distinct_insiders",
+    "frozen_variant",
+    "trigger_accession",
+    "source_provenance_id"
+  ],
+  "costs_per_side_bps": {
+    "half_spread": 3.0,
+    "regulatory_fee": 0.1,
+    "slippage": 7.0,
+    "total": 10.1
+  },
+  "csv_byte_length": 1536213,
+  "csv_file": "h01_frozen_events.csv",
+  "csv_sha256": "6b290b7cf36ead8b53366ed15821e772c473aa3b55eb2e2376bfcbce961e8879",
+  "date_max": "2024-12-31",
+  "date_min": "2006-01-03",
+  "frozen_definition": {
+    "benchmark": "SPY",
+    "cluster": ">=2 distinct reporting-owner CIKs for one issuer within 14 calendar days",
+    "distinct_insider_key": "reporting-owner CIK",
+    "eligible_filing": "SEC Form 4; amendments excluded",
+    "eligible_transaction": "strict non-derivative code P, acquired/disposed A, positive shares and price, unambiguous US common equity",
+    "entry": "next regular-session open strictly after signal availability",
+    "horizons_sessions": [
+      1,
+      5,
+      20,
+      60
+    ],
+    "primary_horizon_sessions": 20,
+    "signal_time": "SEC public acceptance time of the final qualifying filing; conservative filing-day end is retained where historical source lacks exact time"
+  },
+  "future_outcomes_included": false,
+  "generated_at": "2026-08-10T23:59:00Z",
+  "identity_status_counts": {
+    "AMBIGUOUS_COMMON_EQUITY": 8,
+    "MAPPED_COMMON_EQUITY": 4713
+  },
+  "manifest_content_sha256": "c10fbc26a445cedc7197b6be37b5e08fdcdd33bf2320586680dee86a937f5d61",
+  "manifest_version": "h01-quantconnect-events-manifest-v1",
+  "market_data_authority": "QuantConnect US Equity data and Security Master (cloud validation only)",
+  "post_event_audit_field_policy": "coverage diagnostics only; never a BACKTEST feature, filter, or sizing input",
+  "post_event_audit_fields": [
+    "audit_survival_classification"
+  ],
+  "quantconnect_data_gate": {
+    "ambiguous_identity_policy": "fail closed and retain in denominator",
+    "earliest_us_equity_date": "1998-01-01",
+    "maximum_survivor_disappeared_gap_percentage_points": 5.0,
+    "minimum_primary_20_session_coverage_fraction": 0.95,
+    "minimum_symbol_resolution_fraction": 0.95,
+    "mode_default": "DATA_GATE",
+    "performance_gate": "BACKTEST is prohibited until the user reviews a passing DATA_GATE result"
+  },
+  "raw_sec_archives": [
+    {
+      "byte_length": 17306804,
+      "sha256": "62becdadbe5eaff68f03edefe2ba2357c8bb498a1f825b697003e087cf98e6ce",
+      "source_url": "https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/2006q1_form345.zip"
+    },
+    {
+      "byte_length": 9012661,
+      "sha256": "a0302d87c82e1ced213ea097ab7d5174589c6b98642e8bb657e86a87247d375d",
+      "source_url": "https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/2009q3_form345.zip"
+    },
+    {
+      "byte_length": 14219288,
+      "sha256": "0cac6f943813dae94c20ecc8bca63fda692e2b8ac6d02ce2c322ab411f45c357",
+      "source_url": "https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/2012q1_form345.zip"
+    },
+    {
+      "byte_length": 8908570,
+      "sha256": "f50e2e584aa552e2abc6d0cbb9a2e92217c8e2ec8c3cd79c1103dd5ca2123c4e",
+      "source_url": "https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/2015q3_form345.zip"
+    },
+    {
+      "byte_length": 13941852,
+      "sha256": "8541f5c8a975ec99bf21964a77593775e02f55200a7fdf4c0711a7c858a9e2fb",
+      "source_url": "https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/2018q1_form345.zip"
+    },
+    {
+      "byte_length": 8765495,
+      "sha256": "5b89d93d94b70a649355bd47ec5a68a0450e40cc12f082b2817079589aa541b1",
+      "source_url": "https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/2020q3_form345.zip"
+    },
+    {
+      "byte_length": 13882049,
+      "sha256": "0b476188f52a0862e71886eb31a81f6345fc6616403b52188484aef0438cfcfb",
+      "source_url": "https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/2023q1_form345.zip"
+    },
+    {
+      "byte_length": 8954329,
+      "sha256": "44763a00aa8a2077747bc015f12c6a4c09ba7cae4a2d031bf24398f9db9e52f3",
+      "source_url": "https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/2024q4_form345.zip"
+    }
+  ],
+  "research_periods": {
+    "development": [
+      "2005-01-03",
+      "2013-12-31"
+    ],
+    "untouched_holdout": [
+      "2021-08-02",
+      "2026-07-31"
+    ],
+    "validation": [
+      "2014-01-02",
+      "2021-07-30"
+    ]
+  },
+  "row_count": 4721,
+  "signal_authority": "SEC Form 4 structured data and SEC filing metadata",
+  "unique_issuer_ciks": 2895,
+  "unique_signal_ids": 4721
+}
